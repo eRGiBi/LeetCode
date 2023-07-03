@@ -28,5 +28,7 @@ class Solution:
         return True
 
 
+
+
 if __name__ == '__main__':
     print(Solution.isPalindrome("a.b,."))
