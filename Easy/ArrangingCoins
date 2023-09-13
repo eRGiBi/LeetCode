@@ -1,0 +1,12 @@
+class Solution:
+    def arrangeCoins(self, n: int) -> int:
+
+        row_count = 0
+        while n > 0:
+
+            row_count += 1
+            n -= row_count
+        if n != 0:
+            row_count -= 1
+        return row_count
+
