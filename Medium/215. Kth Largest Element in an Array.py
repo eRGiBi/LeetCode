@@ -1,3 +1,6 @@
+import heapq
+
+
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
 
@@ -14,6 +17,18 @@ class Solution:
                         break
 
         return lar_nums[-1]
+
+class Solution2:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        heap = nums[:k]
+        heapq.heapify(heap)
+
+        for num in nums[k:]:
+            if num > heap[0]:
+                heapq.heappop(heap)
+                heapq.heappush(heap, num)
+
+        return heap[0]
 
 
 if __name__ == '__main__':
